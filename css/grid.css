@@ -1,0 +1,183 @@
+.fila, .filaSinMargen
+{
+    margin: 2% auto;
+    overflow: hidden; /*Para que no se desmorone la maquetación con el float en las columnas*/
+    width: 90%;
+}
+
+.filaSinMargen {
+    margin: 0;
+    width: 100%;
+}
+
+.columna
+{
+    box-sizing: border-box; /* Los padding se calculen hacia dentro y no aumenta el tamaño de la caja*/
+    float: left; /*Todas las columnas van a flotar a la izquierda*/
+    margin-right: 2%; /*Esta va ser la separación entre una columna y la otra*/
+    width: 100%;
+}
+
+/*
+    small   480px  up
+    medium  768px  up
+    large   1024px up
+    x-large 1440px up
+*/
+
+/*SMALL*/
+@media (min-width: 480px){
+    /*Cuatro 4 columnas y Seis columnas son 2 en Small*/
+    .cuatro-columnas .columna,
+    .seis-columnas .columna
+    {
+        width: 49%;
+    }
+
+    .cuatro-columnas .columna:nth-child(2n),
+    .seis-columnas .columna:nth-child(2n)
+    {
+        margin-right: 0;
+    }
+
+    /*DOCE COLUMNAS*/
+    .doce-columnas .columna
+    {
+        /*100 - 4 (2 divisiones del 2%) = 96/ 3 columna = 32 */
+        width: 32%;
+    }
+
+    .doce-columnas .columna:nth-child(3n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 0;
+    }
+}
+
+/*MEDIUM*/
+@media (min-width: 768px){
+    /*TRES COLUMNAS*/
+    .tres-columnas .columna
+    {
+        /*100 - 4 (2 divisiones del 2%) = 96/ 3 columna = 32 */
+        width: 32%;
+    }
+
+    .tres-columnas .columna:nth-child(3n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 0;
+    }
+
+    /*SEIS COLUMNAS*/
+    .seis-columnas .columna
+    {
+        /*100 - 10 (5 divisiones del 2%) = 90 / 6 columna = 15 */
+        width: 15%;
+    }
+
+    .seis-columnas .columna:nth-child(2n)
+    {
+        margin-right: 2%;
+    }
+
+    .seis-columnas .columna:nth-child(6n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 0;
+    }
+
+    /*RIGHT Y LEFT SIDEBAR*/
+    .right-sidebar .sidebar, .left-sidebar .sidebar
+    {
+        width: 23.5%;
+    }
+
+    .right-sidebar .content, .left-sidebar .content
+    {
+        width: 74.5%;
+    }
+
+    .right-sidebar .sidebar
+    {
+        margin-right: 0;
+    }
+
+    .left-sidebar .content
+    {
+        margin-right: 0;
+    }
+
+    /*DOCE COLUMNAS son 4 en MEDIUM*/
+    .doce-columnas .columna
+    {
+        /*100 - 6 (3 divisiones del 2%) = 94/ 4 columna = 23.5 */
+        width: 23.5%;
+    }
+
+    .doce-columnas .columna:nth-child(3n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 2%;
+    }
+
+    .doce-columnas .columna:nth-child(4n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 0%;
+    }
+}
+
+/*LARGE*/
+@media (min-width: 1024px){
+    /*DOS COLUMNAS*/
+    .dos-columnas .columna
+    {
+        /*Sumando las dos columnas + el 2% da 102%*/
+        width: 49%;
+    }
+
+    .dos-columnas .columna:nth-child(2n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 0;
+    }
+
+    /*CUATRO COLUMNAS*/
+    .cuatro-columnas .columna
+    {
+        /*100 - 6 (3 divisiones del 2%) = 94/ 4 columna = 23.5 */
+        width: 23.5%;
+    }
+
+    .cuatro-columnas .columna:nth-child(2n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 2%;
+    }
+
+    .cuatro-columnas .columna:nth-child(4n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 0;
+    }
+
+    /*DOCE COLUMNAS*/
+    .doce-columnas .columna
+    {
+        /*100 - 22 (11 divisiones del 2%) = 78 / 12 columna = 6.5 */
+        width: 6.5%;
+    }
+
+    .doce-columnas .columna:nth-child(4n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 2%;
+    }
+
+    .doce-columnas .columna:nth-child(12n)
+    {
+        /*Le quitamos el margen del 2% al ultimo elemento*/
+        margin-right: 0;
+    }
+}
